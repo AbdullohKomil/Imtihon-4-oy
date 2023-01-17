@@ -35,8 +35,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: black;
-        opacity: 0.8 !important;
+        background-color: #33333faf;
         top: 0;
         width: 100vw !important;
         height: 100vh;
@@ -80,13 +79,6 @@
                   aria-current="page"
                   href="#"
                   >ADMIN</a
-                >
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="products.html"
-                  >PRODUCTS</a
                 >
               </li>
               <li class="nav-item">
@@ -199,7 +191,7 @@
           <button class="btn js-close-btn ms-auto d-flex fs-1 btn-close-modale" >
             &times;
           </button>
-          <form class="js-form-modal">
+          <form class="js-form-modal" enctype="multipart/form-data">
             <input
               required
               name="product_name"
@@ -248,7 +240,7 @@
     <div class="container">
       <ul class="js-list d-flex row p-0 mt-3 justify-content-between"></ul>
     </div>
-    <script src="./js/admin.js"></script>
     <script src="./bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js"></script>
+    <script src="./js/admin.js"></script>
   </body>
 </html>
