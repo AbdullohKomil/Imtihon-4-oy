@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="./bootstrap-5.3.0-alpha1-dist/css/bootstrap.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      .close{
+        display: none !important;
+      }
+      .modal__inner{
+        background-color: white;
+        padding: 40px;
+        border-radius: 10px;
+      }
+      .open_edit_modal{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: black;
+        opacity: 0.8 !important;
+        top: 0;
+        width: 100vw !important;
+        height: 100vh;
+        width: 25%;
+        position: fixed;
+        z-index: 10;
+      } 
+      .btn-close-modale:active {
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid justify-content-between">
+          <a
+            class="navbar-brand"
+            href="#"
+            >Navbar</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="#"
+                  >ADMIN</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="products.html"
+                  >PRODUCTS</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  href="index.html"
+                  >USER PAGE</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="container">
+      <button
+        type="button"
+        class="btn btn-primary"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        + add product
+      </button>
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1
+                class="modal-title fs-5"
+                id="exampleModalLabel"
+              >
+                Add product
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <form class="js-form">
+                <input
+                  required
+                  name="product_name"
+                  type="text"
+                  class="form-control mt-2 js-name"
+                  placeholder="Name"
+                />
+                <input
+                  required
+                  name="product_desc"
+                  type="text"
+                  class="form-control mt-2 js-desc"
+                  placeholder="Desc"
+                />
+                <input
+                  required
+                  name="product_img"
+                  type="file"
+                  class="js-image form-control js-img d-none"
+                  id="upload-button"
+                  accept="image/*"
+                />
+                <label
+                  for="upload-button"
+                  class="mt-2"
+                >
+                  <i class="fa-solid fa-upload fs-4"></i> &nbsp; Select Photo
+                </label>
+                <div class="input-group mt-2">
+                  <input
+                    required
+                    name="product_price"
+                    type="number"
+                    class="form-control js-price"
+                    placeholder="Price"
+                  />
+                  <button
+                    type="submit"
+                    class="btn btn-success"
+                  >
+                    SEND
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="open_edit_modal close js-modal">
+        <div class="w-25 modal__inner">
+          <button class="btn js-close-btn ms-auto d-flex fs-1 btn-close-modale" >
+            &times;
+          </button>
+          <form class="js-form-modal">
+            <input
+              required
+              name="product_name"
+              type="text"
+              class="form-control mt-2 js-edit-name"
+              placeholder="Edit Name"
+            />
+            <input
+              required
+              name="product_desc"
+              type="text"
+              class="form-control mt-2 js-edit-desc"
+              placeholder="Edit Desc"
+            />
+            <input
+              name="product_img"
+              type="file"
+              class="js-edit-image form-control d-none"
+              id="upload-button-2"
+              accept="image/*"
+            />
+            <label
+              for="upload-button-2"
+              class="mt-2"
+            >
+              <i class="fa-solid fa-upload fs-4"></i> &nbsp; Edit Photo
+            </label>
+            <div class="input-group mt-2">
+              <input
+                required
+                name="product_price"
+                type="number"
+                class="form-control js-edit-price"
+                placeholder="Edit Price"
+              />
+              <button
+                type="submit"
+                class="btn btn-success"
+              >
+                SEND
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    <div class="container">
+      <ul class="js-list d-flex row p-0 mt-3 justify-content-between"></ul>
+    </div>
+    <script src="./js/admin.js"></script>
+    <script src="./bootstrap-5.3.0-alpha1-dist/js/bootstrap.bundle.js"></script>
+  </body>
+</html>
